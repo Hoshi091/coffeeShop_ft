@@ -21,6 +21,20 @@ export default defineComponent({
   <v-container class="testimonials">
     <v-row>
       <v-carousel  cycle hide-delimiters show-arrows="hover" >
+        <template v-slot:prev="{ props }">
+          <v-btn
+              rounded="xl"
+              color="var(--cl-secondary)"
+              @click="props.onClick"
+          > ← </v-btn>
+        </template>
+        <template v-slot:next="{ props }">
+          <v-btn
+              rounded="xl"
+              color="var(--cl-secondary)"
+              @click="props.onClick"
+          > → </v-btn>
+        </template>
         <v-carousel-item  v-for="testimonial in testimonials" :key="testimonial.id">
           <v-card class="col-lg-6 col-12 mx-auto">
             <v-card-title class="text-center">{{ testimonial.author }}</v-card-title>
