@@ -41,29 +41,29 @@ export default defineComponent({
         {
           name: 'Arabica',
           description: 'Smooth and aromatic coffee.',
-          image: 'https://res.cloudinary.com/gagan/image/upload/v1594040000/bijyl26bjkw7z4lyaazf.jpg',
+          image: 'https://zippypixels.com/wp-content/uploads/2018/03/Free-coffee-bag-mockup.jpg',
         },
         {
           name: 'Robusta',
           description: 'Bold and strong flavor.',
-          image: 'https://res.cloudinary.com/gagan/image/upload/v1594040000/bijyl26bjkw7z4lyaazf.jpg',
+          image: 'https://zippypixels.com/wp-content/uploads/2018/03/Free-coffee-bag-mockup.jpg',
 
         },
         {
           name: 'Ethiopian Yirgacheffe',
           description: 'Medium-bodied with fruity and floral notes.',
-          image: 'https://res.cloudinary.com/gagan/image/upload/v1594040000/bijyl26bjkw7z4lyaazf.jpg',
+          image: 'https://zippypixels.com/wp-content/uploads/2018/03/Free-coffee-bag-mockup.jpg',
 
         },
         {
           name: 'Colombian Supremo',
           description: 'Rich and well-balanced with a hint of nuttiness.',
-          image: 'https://res.cloudinary.com/gagan/image/upload/v1594040000/bijyl26bjkw7z4lyaazf.jpg',
+          image: 'https://zippypixels.com/wp-content/uploads/2018/03/Free-coffee-bag-mockup.jpg',
         },
         {
           name: 'Sumatra Mandheling',
           description: 'Full-bodied and earthy with low acidity.',
-          image: 'https://res.cloudinary.com/gagan/image/upload/v1594040000/bijyl26bjkw7z4lyaazf.jpg',
+          image: 'https://zippypixels.com/wp-content/uploads/2018/03/Free-coffee-bag-mockup.jpg',
         },
       ],
     };
