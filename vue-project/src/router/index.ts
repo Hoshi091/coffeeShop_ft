@@ -46,7 +46,12 @@ const router = createRouter({
       name: 'menu-product',
       component: () => import('../views/ProductView.vue'),
       props: true,
-    }
+    },
+    {
+      path:'/wishlist',
+      name: 'wishlist',
+      component: () => import('../views/WishlistView.vue'),
+    },
 
   ]
 })

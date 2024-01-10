@@ -6,17 +6,18 @@ export const useWishlistStore = defineStore('wishlist', {
     }),
 
     actions: {
-        addToWishlist(product: { id: string; name: string; image: string; price: number }) {
-            if (!this.wishlist.some(item => item.id === product.id)) {
+        toggleWishlist(product: { id: string; name: string; image: string; price: number }) {
+            const index = this.wishlist.findIndex(item => item.id === product.id);
+
+            if (index !== -1) {
+                this.wishlist.splice(index, 1);
+            } else {
                 this.wishlist.push(product);
             }
         },
 
-        removeFromWishlist(productId: string) {
-            const index = this.wishlist.findIndex(item => item.id === productId);
-            if (index !== -1) {
-                this.wishlist.splice(index, 1);
-            }
+        isInWishlist(productId: string): boolean {
+            return this.wishlist.some(item => item.id === productId);
         },
     },
 });

@@ -2,6 +2,7 @@
 import {defineComponent} from 'vue'
 import axios from "axios";
 import BannerComponent from "@/components/BannerComponent.vue";
+import {useWishlistStore} from "@/stores/useWishlistStore";
 
 export default defineComponent({
   name: "ProductView",
@@ -12,10 +13,16 @@ export default defineComponent({
       required: true,
     }
   },
+
   data(){
     return {
       product: {} as any,
     }
+  },
+  computed: {
+    isInWishlist() {
+      return useWishlistStore().isInWishlist(this.product.id);
+    },
   },
   mounted() {
     this.getProductById();
@@ -31,7 +38,10 @@ export default defineComponent({
         console.error('Error', error);
       }
     },
-
+    toggleWishlist() {
+      const { id, name, image, price } = this.product;
+      useWishlistStore().toggleWishlist({ id, name, image, price });
+    },
   },
 })
 </script>
@@ -44,18 +54,24 @@ export default defineComponent({
       linkTo="/coffeePath"
       backgroundImage="https://t4.ftcdn.net/jpg/02/34/63/07/360_F_234630793_eHKQucxaXftnWrecTJFITmD4cr3TlUgG.jpg"
   />
+
   <div class="w-66 mx-auto mt-7 text-center menu-product">
     <v-row>
-      <v-col cols="6" sm="12" md="6">
+      <v-col cols="12" sm="12" md="6">
         <v-img :src="product.image"></v-img>
       </v-col>
-      <v-col cols="6" sm="12" md="6">
+      <v-col cols="12" sm="12" md="6">
         <h2 class="mt-4 mb-4">{{ product.name }}</h2>
         <v-divider></v-divider>
         <p>{{ product.description }}</p>
         <p>${{product.price}}</p>
+        <div class="availability">
         <p v-if="product.is_available === 1" class="available">Available</p>
         <p v-else class="unavailable">Unavailable</p>
+        <v-btn @click="toggleWishlist" icon>
+          <v-icon>{{ isInWishlist ? 'mdi-heart' : 'mdi-heart-outline' }}</v-icon>
+        </v-btn>
+        </div>
       </v-col>
     </v-row>
 

@@ -1,6 +1,8 @@
 import { defineStore } from 'pinia';
 import axios from "axios";
 
+
+
 export const productTimestamp = defineStore('productTimestamp', {
     state: () => ({
         clickedProducts: [] as { productId: string; timestamp: string }[],
@@ -13,7 +15,6 @@ export const productTimestamp = defineStore('productTimestamp', {
                 timestamp: new Date().toISOString(),
             });
 
-            // Call setProductTimestamp to send the data to the server
             await this.setProductTimestamp(productId);
         },
 

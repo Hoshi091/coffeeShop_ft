@@ -51,7 +51,7 @@ export default defineComponent({
           <v-card>
             <v-img :src="product.image" alt="Post Image"></v-img>
             <v-card-title>{{ product.name }}</v-card-title>
-            <v-card-text>${{ product.price }}</v-card-text>
+            <v-card-text class="card-price">${{ product.price }}</v-card-text>
             <v-card-text>{{ truncateText(product.description, 50) }}</v-card-text>
             <p v-if="product.is_available === 1" class="availability">Available</p>
             <p v-else class="availability unavailable">Unavailable</p>

@@ -16,13 +16,15 @@ import { RouterLink, RouterView } from 'vue-router'
           class="nav-content"
           :class="showMobileMenu ? 'open-menu' : 'closed-menu'"
       >
-        <div class="logo">Logo</div>
+<!--         logo -->
+        <RouterLink to="/"><v-icon>mdi-coffee</v-icon></RouterLink>
         <ul class="nav-items">
           <li><RouterLink to="/">Home</RouterLink></li>
           <li><RouterLink to="/about">About us</RouterLink></li>
           <li><RouterLink to="/blog">Blog</RouterLink></li>
           <li><RouterLink to="/coffeePath">About our coffee</RouterLink></li>
           <li><RouterLink to="/menu">Menu</RouterLink></li>
+          <li><RouterLink to="/wishlist">Wishlist</RouterLink></li>
           <li><RouterLink to="/contact">Contact</RouterLink></li>
         </ul>
       </div>
@@ -37,7 +39,7 @@ import { RouterLink, RouterView } from 'vue-router'
   <div class="container main-footer">
     <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-3 py-3 my-3 ">
       <div class="col mb-3">
-        <RouterLink to="/">Home Logo</RouterLink>
+        <RouterLink to="/"><v-icon>mdi-coffee</v-icon></RouterLink>
         <p class="text-muted">&copy; 2024</p>
       </div>
 
@@ -55,6 +57,7 @@ import { RouterLink, RouterView } from 'vue-router'
           <li><RouterLink to="/blog">Blog</RouterLink></li>
           <li><RouterLink to="/coffeePath">About our coffee</RouterLink></li>
           <li><RouterLink to="/menu">Menu</RouterLink></li>
+          <li><RouterLink to="/wishlist">Wishlist</RouterLink></li>
           <li><RouterLink to="/contact">Contact</RouterLink></li>
         </ul>
       </div>

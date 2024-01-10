@@ -20,6 +20,7 @@
         :src="coffeeType.image"
         cover
     >
+      <div class="overlay"></div>
       <div class="carousel-text">
         <h2>{{ coffeeType.name }}</h2>
         <p>{{ coffeeType.description }}</p>
