@@ -1,0 +1,354 @@
+@import './base.css';
+
+:root{
+  --cl-primary: #645147;
+  --cl-secondary:#C69B7B;
+  --cl-tertiary: #f3d7be;
+  --cl-complementary: #3A2845;
+  --cl-white: #FFF;
+  --cl-black:#000;
+}
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  /*padding: 2rem;*/
+  font-weight: normal;
+}
+
+
+body{
+  font-family: Georgia, serif !important;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    max-height: 100%;
+    min-width: 100%;
+    position: relative;
+  }
+}
+html, body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+
+
+  header {
+    display: flex;
+    place-items: center;
+    padding-right: calc(var(--section-gap) / 2);
+  }
+
+
+
+  header .wrapper {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .main-header {
+    width: 100%;
+    text-align: center;
+    color: var(--cl-white);
+    padding: 50px 0;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position-y: bottom !important;
+  }
+
+
+
+  .main-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+
+  .main-header p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+
+
+  .btn-main {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: var(--cl-black) !important;
+    color: var(--cl-white) !important;
+    border-radius: 5px;
+  }
+
+
+  .btn-main:hover {
+    background-color: var(--cl-secondary) !important;
+    color: var(--cl-black) !important;
+  }
+  .carousel-main{
+    width: 80% !important;
+    margin: auto;
+    position: relative;
+    .carousel-text{
+      position: absolute;
+      top: 50%;
+      left: 25%;
+      transform: translate(-50%, -50%);
+      text-align: left;
+      color: var(--cl-white);
+    }
+  }
+.nav-menu {
+  background-color: var(--cl-primary);
+}
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  align-items: center;
+}
+.nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 110%;
+}
+.nav-items .router-link-active {
+  color: var(--cl-white);
+}
+.nav-items li {
+  padding: 0 10px;
+
+}
+.nav-items li a{
+  display: inline-block;
+  padding: 0 1rem;
+  color: var(--cl-tertiary);
+  text-decoration: none;
+  transition: background 0.5s, color 0.5s;
+  -webkit-transition: background 0.5s, color 0.5s;
+}
+.nav-items li a:hover{
+  color: var(--cl-white);
+}
+.mobile-navbar svg{
+  width: 25px;
+  height: auto;
+  margin-left: 1em;
+}
+i {
+  display: none;
+}
+
+.main-footer{
+  background-color: var(--cl-primary);
+  width: 100%;
+  max-width: 100% !important;
+}
+.main-footer .row {
+  width: 80% !important;
+  margin: auto;
+}
+.main-footer {
+  color: var(--cl-tertiary);
+}
+.main-footer a {
+  color: var(--cl-tertiary);
+}
+.main-footer h5 {
+  color: var(--cl-secondary);
+}
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    padding-top: 10px;
+
+    width: 100%;
+  }
+  .open-menu {
+    opacity: 1;
+    height: auto;
+  }
+  .closed-menu {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+  }
+  .nav-content {
+    flex-direction: column;
+    z-index: 100;
+    position: relative;
+    transition: all 0.2s ease-out;
+  }
+  .nav-items {
+    flex-direction: column;
+  }
+  i {
+    display: block;
+    text-align: right;
+    padding: 0 10px 10px 0;
+  }
+}
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  background-color: var(--cl-tertiary);
+  border-radius: 25px;
+}
+
+.section-image {
+  flex-basis: 100%;
+
+}
+
+.section-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 25px;
+
+}
+
+.section-content .content {
+  flex-basis: 100%;
+  margin-top: 20px;
+}
+.section-content .content h2 {
+  color: var(--cl-complementary)
+}
+
+@media screen and (min-width: 768px) {
+
+  .section-image {
+    flex-basis: 30%;
+  }
+  .section-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+
+
+  .section-content .content {
+    flex-basis: 65%;
+    text-align: left;
+  }
+  .image-on-left .content {
+    order: 2;
+  }
+
+  .image-on-right .content {
+    order: 1;
+  }
+
+  .image-on-left .section-image {
+    order: 1;
+  }
+
+  .image-on-right .section-image {
+    order: 2;
+  }
+}
+
+.contact-page-details{
+  width: 90%;
+  margin: auto !important;
+}
+.contact-page-details .v-card{
+  margin: 0 10px;
+  background-color: var(--cl-tertiary);
+  border-radius: 25px;
+}
+.contact-page-details .v-card-title{
+  color: var(--cl-complementary);
+  font-weight: bold;
+}
+.contact-page-form .v-input__control {
+  background-color: rgba(243,215,190, 0.5);
+  color: var(--cl-complementary);
+  border-radius: 10px 10px 0 0;
+}
+.contact-page-form .v-field__overlay{
+  border-radius: 10px 10px 0 0;
+}
+.contact-page-form v-label {
+  color: var(--cl-complementary);
+}
+.v-divider--inset:not(.v-divider--vertical) {
+  margin-inline-end: 72px;
+}
+.contact-heading .v-card-title{
+  color: var(--cl-primary);
+  font-weight: 700;
+  padding-left: 0 !important;
+}
+
+.about-coffee-container h2{
+  color: var(--cl-primary);
+}
+.about-coffee-container p:first-child{
+  color: var(--cl-complementary);
+}
+@media screen and (max-width: 768px) {
+  .contact-page-form{
+    margin: 0 10px;
+  }
+}
+.testimonials.v-container {
+  max-height: 400px !important;
+  margin: auto;
+  position: relative;
+}
+.testimonials .v-card, .blog-post-cards .v-card, .product-cards .v-card{
+  margin-top: 1em;
+  -webkit-box-shadow: 0 0 20px -3px rgba(148,122,78,0.56);
+  -moz-box-shadow: 0 0 20px -3px rgba(148,122,78,0.56);
+  box-shadow: 0 0 20px -3px rgba(148,122,78,0.56);
+}
+.testimonials .v-window__controls{
+  height: 35%;
+}
+.testimonials .v-row, .testimonials .v-window, .testimonials .v-window__container, .testimonials .v-responsive__content, .testimonials .v-window-item {
+  max-height: inherit;
+}
+@media screen and (max-width: 768px) {
+  .testimonials .v-card{
+    width: 80%;
+  }
+}
+
+.blog-post-cards .v-card-title, .product-cards .v-card-title{
+  color: var(--cl-secondary);
+}
+
+.blog-post-cards a, .product-cards a {
+  text-decoration: none;
+}
+
+.blog-post {
+  margin-bottom: 3em;
+}
+
+.blog-post h2, .menu-product h2{
+  color: var(--cl-secondary);
+}
+
+.blog-post p, .menu-product p {
+  white-space: pre-line;
+}
+
