@@ -358,6 +358,10 @@ i {
   color: var(--cl-secondary);
 }
 
+.product-cards .v-card:hover, .blog-post-cards .v-card:hover {
+  transform: scale(105%);
+}
+
 .blog-post-cards a, .product-cards a {
   text-decoration: none;
 }

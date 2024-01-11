@@ -3,10 +3,11 @@ import {defineComponent} from 'vue'
 import {useWishlistStore} from "@/stores/useWishlistStore";
 import BannerComponent from "@/components/BannerComponent.vue";
 import {productTimestamp} from "@/stores/productTimestamp";
+import CurrentOffers from "@/components/CurrentOffers.vue";
 
 export default defineComponent({
   name: "WishlistView",
-  components: {BannerComponent},
+  components: {CurrentOffers, BannerComponent},
   setup() {
     const wishlistStore = useWishlistStore();
     const wishlist = wishlistStore.wishlist;
@@ -45,6 +46,7 @@ export default defineComponent({
     </v-row>
   </v-container>
 
+  <CurrentOffers></CurrentOffers>
 
 </template>
 
